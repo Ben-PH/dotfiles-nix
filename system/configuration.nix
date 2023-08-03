@@ -25,7 +25,7 @@
   # Enable flakes sys-wide
   nix = {
     package = pkgs.nixFlakes;
-    extraOptions = "experimental-features =  flakes";
+    extraOptions = "experimental-features =  nix-command flakes";
   };
 
   # Configure network proxy if necessary
