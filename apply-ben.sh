@@ -1,6 +1,6 @@
-
 #!/bin/sh
 
-pushd ~/.dotfiles/users
-home-manager switch -f ./ben/home.nix
+pushd ~/.dotfiles
+nix build .#homeManagerConfigurations.ben.activationPackage && 
+./result/activate
 popd

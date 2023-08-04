@@ -18,6 +18,20 @@
       lib = nixpkgs.lib;
 
     in {
+      homeManagerConfigs = {
+        ben = home-manager.lib.homeManagerConfiguration {
+	  pkgs = nixpkgs.legacyPackages.${system};
+	  modules = [
+	    ./users/ben/home.nix
+	    {
+	      home = {
+	        username = "ben";
+	        homeDirectory = "/home/ben";
+	      };
+	    }
+	  ];
+	};
+      };
       nixosConfigurations = {
         nixos = lib.nixosSystem {
 	  inherit system;
